@@ -1,56 +1,42 @@
 
-/*
-font-family: 'Exo 2', sans-serif;
-font-family: 'Lato', sans-serif;
-font-family: 'Alegreya', serif;
-font-family: 'Indie Flower', cursive;
-*/
 
-
-body,
-html {
-    margin: 0;
-    padding: 0;
+/* See index.css */
+.App {
     /*background: url("../img/background-800px.jpg") fixed;*/
     background-size: cover;
+    background-color: #663399;
     color: #CFC9BD;
-    font-family: 'Lato', sans-serif;
 }
 
-img,
-embed,
-object,
-video {
-    max-width: 100%;
-}
 
-a {
-    grid-area: button;
-    text-decoration: none;
-    justify-self: center;
-    cursor: pointer;
-}
 
-form {
-    grid-area: button;
-    text-decoration: none;
-    justify-self: center;
-    cursor: pointer;
-}
+/*a {*/
+    /*grid-area: button;*/
+    /*text-decoration: none;*/
+    /*justify-self: center;*/
+    /*cursor: pointer;*/
+/*}*/
 
-.main-container {
-    display: grid;
-    position: relative;
-    grid-template: 10% repeat(6, 13%) 10% / 1fr;
-    grid-template-areas: "header"
-                         "project-1"
-                         "project-2"
-                         "blog-move"
-                         "project-5"
-                         "project-3"
-                         "project-4"
-                         "footer";
-}
+/*form {*/
+    /*grid-area: button;*/
+    /*text-decoration: none;*/
+    /*justify-self: center;*/
+    /*cursor: pointer;*/
+/*}*/
+
+/*.main-container {*/
+    /*display: grid;*/
+    /*position: relative;*/
+    /*grid-template: 10% repeat(6, 13%) 10% / 1fr;*/
+    /*grid-template-areas: "header"*/
+                         /*"project-1"*/
+                         /*"project-2"*/
+                         /*"blog-move"*/
+                         /*"project-5"*/
+                         /*"project-3"*/
+                         /*"project-4"*/
+                         /*"footer";*/
+/*}*/
 
 
 /*--------------------------
@@ -58,74 +44,13 @@ form {
 ---------------------------*/
 
 .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: rgba(54, 49, 39, .95);
     padding: 10px;
-    grid-area: header;
-    justify-items: center;
-    display: grid;
-    grid-template: 50% 50% / 20% 60% 20%;
-    grid-template-areas: "logo name hamburger"
-                         "logo skills hamburger";
     box-shadow: 1px 1px 3px rgba(3, 2, 0, 0.64);
 }
 
-.logo {
-    width: 42px;
-    border-radius: 50%;
-    grid-area: logo;
-    border: 1px solid rgba(207, 201, 189, 0.5);
-    box-shadow: 2px 3px 11px rgba(3, 2, 0, 0.64);
-    padding: .2rem;
-    background-color: rgba(97, 126, 158, 1);
 
-}
 
-.site-navigation {
-    grid-area: hamburger;
-    /*color: #CFC9BD;*/
-    font-size: 2.4rem;
-}
-
-.menu-container {
-    display: inline-block;
-    cursor: pointer;
-}
-
-/*---- make bars for hamburger ----*/
-
-.bar1,
-.bar2,
-.bar3 {
-    width: 35px;
-    height: 5px;
-    background-color: #CFC9BD;
-    box-shadow: 2px 1px 11px rgba(3, 2, 0, 0.64);
-    margin: 6px 0;
-    transition: 0.4s;
-}
-
-/*---- animate bars to X ----*/
-
-.change .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-    transform: rotate(-45deg) translate(-9px, 6px);
-}
-
-.change .bar2 {
-    opacity: 0;
-}
-
-.change .bar3 {
-    -webkit-transform: rotate(45deg) translate(-8px, -8px);
-    transform: rotate(45deg) translate(-8px, -8px);
-}
-
-.hamburger:hover {
-    background-color: rgba(233, 211, 95, .5);
-}
-
-.hamburger:active {
-    background-color: rgba(106, 118, 131, .5);
-    color: #fff;
-    box-shadow: none;
-}
