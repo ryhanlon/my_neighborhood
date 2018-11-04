@@ -1,44 +1,135 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# My Reads App
+##### Project for the *Front-End Web Developer Nanodegree*
 
-## Available Scripts
+#### Introduction
 
-In the project directory, you can run:
+**Title**: My Neighborhood
 
-### `npm start`
+by Rebecca Hanlon
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+*My Neighborhood* is a
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Click [here](#picture-of-data-and-components-breakdown) to see the component and data break down of the app.
 
-### `npm test`
+Click [here](#pictures-of-responsive-design) to see pictures of the website's Responsive Design.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br>
 
-### `npm run build`
+<hr>
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##### Start-up Server
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+To run the server, NPM or Yarn must be installed.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Open up the terminal and go to the project directory.  Inside of the project directory, run:
 
-### `npm run eject`
+`npm install`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+`npm start`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+If you have Yarn installed run:
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+`yarn start`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This project was built using *Create React App*.  For complete technical details click [Create React App](./docs/README.md)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+##### Technical Components
+- CSS Grid, Flexbox and Media Queries used to build the _responsive features_.
+- Accessibility features built using semantic tags and appropriate properties such as Aria-labels and tabIndex
+- JavaScript (ECMASript 6)
+- React 16.5.2
+    - PropTypes
+
+
+
+
+##### Articles and Tutorials
+**notes**:
+
+Used the following tutorials, articles and docs while building this app.
+
+- *Tutorial Request: FEND Project 6 - Walk Through* by Ryan Waite, [short video](https://www.youtube.com/watch?v=N8bU1oWlLwY&feature=youtu.be) , [long video](https://www.youtube.com/watch?v=acJHkd6K5kI&=&feature=youtu.be)
+The example for the updateBook function was helpful.  I examined the components breakdown and where to put state.
+
+- The following lessons from the FEND-NanoDegree course:
+    - Lesson 3: State Management,
+    - Lesson 4: Render UI with External Date
+    - Lesson 5: Managing App Location with React Router
+- React Docs
+    - [The Select Tab](https://reactjs.org/docs/forms.html#the-select-tag)
+    - [Handling Events](https://reactjs.org/docs/handling-events.html)
+    - [DOM Elements](https://reactjs.org/docs/dom-elements.html)
+
+##### Folder Structure Breakdown
+```
+    my-reads_app/
+      docs/
+        imgs/
+        rubric-notes
+        README.md(React)
+      node_modules/
+      package.json
+      public/
+        index.html
+        favicon.ico
+        manifest.json
+      src/
+        components/
+           App/
+             App.css
+             App.js
+           Books/
+             Books.js
+             Books.css
+           LibraryPage/
+             LibraryPage.js
+             LibraryPage.css
+           ReturnIcon/
+             ReturnIcon.js
+             ReturnIcon.css
+           SearchIcon/
+             SearchIcon.js
+             SearchIcon.css
+           SearchPage/
+             SearchPage.js
+             SearchPage.css
+           Shelf/
+             Shelf.js
+             Shelf.css
+           ShelfControl/
+             ShelfControl.js
+             ShelfControl.css
+        App.test.js
+        index.css
+        index.js
+        logo.svg
+        icons/
+        BooksAPI.js
+      README.md
+      gitignore
+      yarn.lock
+      package.json
+      package-lock.json
+```
+
+#### Picture of Data and Components Breakdown
+![breakdown](./docs/imgs/myReadAppOutline_v2.jpg)
+
+#### Pictures of Responsive Design
+##### Phone
+
+![mobile home page](./docs/imgs/mobile-1.png)
+
+![mobile search page](./docs/imgs/mobile-2.png)
+
+##### Tablet
+![tablet home page](./docs/imgs/tablet-1.png)
+
+![tablet search page](./docs/imgs/tablet-2.png)
+
+##### Desk Top
+![desktop home page](./docs/imgs/desktop-1.png)
+
+![desktop search page](./docs/imgs/desktop-2.png)
