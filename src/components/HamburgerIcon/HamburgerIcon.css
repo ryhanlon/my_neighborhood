@@ -13,22 +13,23 @@
 
 /*---- animate bars to X ----*/
 
-.change .bar1 {
+.change1 {
     -webkit-transform: rotate(-45deg) translate(-9px, 6px);
     transform: rotate(-45deg) translate(-9px, 6px);
 }
 
-.change .bar2 {
+.change2 {
     opacity: 0;
 }
 
-.change .bar3 {
+.change3 {
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
     transform: rotate(45deg) translate(-8px, -8px);
 }
 
 .hamburger:hover {
     background-color: rgba(233, 211, 95, .5);
+    cursor: pointer;
 }
 
 .hamburger:active {

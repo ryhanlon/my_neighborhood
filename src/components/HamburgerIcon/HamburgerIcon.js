@@ -9,12 +9,14 @@ class HamburgerIcon extends Component {
 
 	render() {
 		return (
-			<div id="menu" className="header-menu proj-list">
+			<div id="menu" className="proj-list">
 				<a>
-				  <div className="menu-container" onClick={this.menuClick}>
-					  <div className="bar1"></div>
-					  <div className="bar2"></div>
-					  <div className="bar3"></div>
+				  <div className="" onClick={this.props.onClick}>
+
+					  <div className={this.props.changeHamburger ? "hamburger change1 bar1" : "hamburger bar1"}></div>
+					  <div className={this.props.changeHamburger ? "hamburger change2 bar2" : "hamburger bar2"}></div>
+					  <div className={this.props.changeHamburger ? "hamburger change3 bar3" : "hamburger bar3"}></div>
+
 				  </div>
 				</a>
 			</div>
