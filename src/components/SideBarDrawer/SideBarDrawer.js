@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './SideBarDrawer.css';
+import SearchBar from '../SearchBar/SearchBar.js';
+import SideBarList from '../SideBarList/SideBarList.js';
 
 
 class SideBarDrawer extends Component {
@@ -17,12 +19,9 @@ class SideBarDrawer extends Component {
 		<nav id="drawer" className="modal-style">
 			{this.props.children}
 
-		  <ul className="nav-list">
-			  <li className="nav-item">location 1</li>
-			  <li className="nav-item">location 2</li>
-			  <li className="nav-item">location 3</li>
-			  <li className="nav-item">location 4</li>
-		  </ul>
+			<SearchBar />
+
+			<SideBarList />
 
 		</nav>
 
@@ -32,9 +31,9 @@ class SideBarDrawer extends Component {
 
 
 SideBarDrawer.propTypes = {
-	onClose: PropTypes.func.isRequired,
 	show: PropTypes.bool,
 	children: PropTypes.node
 };
+
 
 export default SideBarDrawer;

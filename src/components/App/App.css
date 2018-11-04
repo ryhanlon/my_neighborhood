@@ -1,11 +1,10 @@
-
-
-/* See index.css */
 .App {
     /*background: url("../img/background-800px.jpg") fixed;*/
     background-size: cover;
     background-color: #663399;
     color: #CFC9BD;
+    height: 100vh;
+
 }
 
 

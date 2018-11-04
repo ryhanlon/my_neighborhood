@@ -25,9 +25,6 @@ class App extends Component {
 			  				changeHamburger={this.state.isOpen}
 			  />
 
-
-
-
 		  </header>
 
 		  <main>
@@ -41,5 +38,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;
