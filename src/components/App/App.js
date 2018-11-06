@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import HamburgerIcon from '../HamburgerIcon/HamburgerIcon.js';
 import SideBarDrawer from '../SideBarDrawer/SideBarDrawer.js';
+import { load_google_maps } from '../Utils/Utils.js';
+// import Map from '../Map/Map.js';
 
 class App extends Component {
 	constructor(props) {
@@ -14,6 +16,17 @@ class App extends Component {
 		this.setState({
 			isOpen: !this.state.isOpen
 		});
+	};
+
+	componentDidMount() {
+		let googleMapsPromise = load_google_maps();
+
+		Promise.all([
+			googleMapsPromise
+		])
+			.then(values => {
+				console.log(values);
+			})
 	}
 
 	render() {
@@ -31,6 +44,9 @@ class App extends Component {
 			  <SideBarDrawer show={this.state.isOpen}
 							 onClose={this.toggleSideBarDrawer}
 			  />
+
+			  <div id="map"></div>
+
 		  </main>
 
 		<h1> app</h1>
