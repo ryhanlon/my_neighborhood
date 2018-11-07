@@ -62,6 +62,8 @@ The example for the updateBook function was helpful.  I examined the components 
     - [Handling Events](https://reactjs.org/docs/handling-events.html)
     - [DOM Elements](https://reactjs.org/docs/dom-elements.html)
 
+- How to deal with the state being one step behind, [StackOverFlow](https://stackoverflow.com/questions/42434013/react-state-update-step-behind) answered by paquash
+
 ##### Folder Structure Breakdown
 ```
     my-reads_app/

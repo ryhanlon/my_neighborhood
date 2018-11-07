@@ -19,7 +19,7 @@ class SideBarDrawer extends Component {
 		<nav id="drawer" className="modal-style">
 			{this.props.children}
 
-			<SearchBar />
+			<SearchBar 	passQuery={this.props.passQuery} />
 
 			<SideBarList />
 

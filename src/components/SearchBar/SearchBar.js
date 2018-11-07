@@ -12,12 +12,14 @@ class SearchBar extends Component {
 		}
 	}
 
-	updateQuery = (query) => {
-		this.setState({ query: query})
-	}
+	handleQuery = (event) => {
+		this.setState({
+		   query: event.target.value
+		}, () => this.props.passQuery(this.state.query));
+	   };
 
 	render() {
-		const { query } = this.state;
+		// const { query } = this.state;
 
 		return (
 			<form>
@@ -26,8 +28,8 @@ class SearchBar extends Component {
 							id="search field"
 							role="searchbox"
 							placeholder="Search by title or author"
-							value={query}
-						   onChange={(event) => this.updateQuery(event.target.value)}
+							value={this.state.query}
+						   onChange={this.handleQuery}
 							/>
 				</label>
 			</form>
