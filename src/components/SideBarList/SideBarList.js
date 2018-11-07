@@ -7,19 +7,22 @@ class SideBarList extends Component {
 
 	render() {
 		return (
-			<ul className="content-list">
-				<li className="content-item">location 1</li>
-				<li className="content-item">location 2</li>
-				<li className="content-item">location 3</li>
-				<li className="content-item">location 4</li>
-		  	</ul>
+			<div>
+			{
+				this.props.passVenues && this.props.passVenues.length > 0 && this.props.passVenues.map((venue) => (
+					<ul className="conent-list" key={venue.id}>
+						<li className="content-item">{venue.name}</li>
+					</ul>
+				))
+			}
+			</div>
 		);
 	}
 }
 
 
 SideBarList.propTypes = {
-
+	passVenues: PropTypes.array
 };
 
 

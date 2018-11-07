@@ -18,21 +18,25 @@ class SearchBar extends Component {
 		}, () => this.props.passQuery(this.state.query));
 	   };
 
+
 	render() {
-		// const { query } = this.state;
+		const { query } = this.state;
 
 		return (
+			<div>
 			<form>
 				<label>
 					<input type="text"
 							id="search field"
 							role="searchbox"
 							placeholder="Search by title or author"
-							value={this.state.query}
+							value={query}
 						   onChange={this.handleQuery}
 							/>
 				</label>
 			</form>
+
+			</div>
 		);
 	}
 }

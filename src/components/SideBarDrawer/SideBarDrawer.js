@@ -21,7 +21,7 @@ class SideBarDrawer extends Component {
 
 			<SearchBar 	passQuery={this.props.passQuery} />
 
-			<SideBarList />
+			<SideBarList passVenues={this.props.passVenues} />
 
 		</nav>
 

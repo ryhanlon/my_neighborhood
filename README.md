@@ -50,8 +50,8 @@ This project was built using *Create React App*.  For complete technical details
 
 Used the following tutorials, articles and docs while building this app.
 
-- *Tutorial Request: FEND Project 6 - Walk Through* by Ryan Waite, [short video](https://www.youtube.com/watch?v=N8bU1oWlLwY&feature=youtu.be) , [long video](https://www.youtube.com/watch?v=acJHkd6K5kI&=&feature=youtu.be)
-The example for the updateBook function was helpful.  I examined the components breakdown and where to put state.
+- *Coding Session - Google Maps with React JS* by Ryan Waite, [video](https://www.youtube.com/watch?v=5J6fs_BlVC0&feature=youtu.be)
+I used this tutorial to set up Google Maps in React, filter input.
 
 - The following lessons from the FEND-NanoDegree course:
     - Lesson 3: State Management,
