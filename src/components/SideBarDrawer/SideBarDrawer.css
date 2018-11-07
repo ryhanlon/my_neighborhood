@@ -1,4 +1,6 @@
 .modal-style {
+    position: absolute;
+    z-index: 100;
     background-color: #fff;
     border-radius: 5;
     max-width: 18vw;

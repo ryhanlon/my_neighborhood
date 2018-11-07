@@ -22,18 +22,16 @@ export function load_google_maps() {
 }
 
 export function load_places() {
-  const CLIENT_ID = '';
-  const CLIENT_SECRET ='';
+  const CLIENT_ID = 'JGXC3I3UMA1HFC401TQXSAKAIF0SY0VVUVQYJDUNHI4RLXPW';
+  const CLIENT_SECRET ='5YCNS0Z3KAIDGSOCXDJG4COUM4ZY2VZH41SLAB5UJ3B2XBLT';
 
 
   let city = 'Silver Spring, MD';
   let query = 'Shopping';
-  let apiURL = `https://api.foursquare.com/v2/venues/search?ll=40.7,-74&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&limit=10&${query}&${city}&v=20181102
-`;
-  fetch(apiURL)
-      .then(resp => console.log(resp.json()))
+  let apiURL = `https://api.foursquare.com/v2/venues/search?ll=40.7,-74&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&limit=10&${query}&${city}&v=20181102`;
+  return fetch(apiURL).then(resp => resp.json())
 }
 
 
 
-export default load_google_maps;
+// export default load_google_maps;
