@@ -4,18 +4,35 @@ import './SideBarList.css';
 
 
 class SideBarList extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			id: ''
+		}
+	}
+
+	handleClick = (event) => {
+		console.log(event.target.id);
+		this.setState({
+			id: event.target.id
+		}, () => this.props.listItemClick(this.state.id));
+	};
 
 	render() {
 		return (
-			<div>
+
+			<ul className="content-list">
+
 			{
+				// Add venues to the sidebar
 				this.props.passVenues && this.props.passVenues.length > 0 && this.props.passVenues.map((venue) => (
-					<ul className="conent-list" key={venue.id}>
-						<li className="content-item">{venue.name}</li>
-					</ul>
+						<li className="content-item" id={venue.id} key={venue.id}
+							onClick={this.handleClick}>{venue.name}</li>
 				))
 			}
-			</div>
+
+			</ul>
 		);
 	}
 }

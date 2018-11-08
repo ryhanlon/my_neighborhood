@@ -29,7 +29,7 @@ class SearchBar extends Component {
 					<input type="text"
 							id="search field"
 							role="searchbox"
-							placeholder="Search by title or author"
+							placeholder="Filter content"
 							value={query}
 						   onChange={this.handleQuery}
 							/>

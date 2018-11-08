@@ -3,13 +3,17 @@ import './App.css';
 import HamburgerIcon from '../HamburgerIcon/HamburgerIcon.js';
 import SideBarDrawer from '../SideBarDrawer/SideBarDrawer.js';
 import { load_google_maps, load_places } from '../Utils/Utils.js';
+import SideBarList from "../SideBarList/SideBarList";
 // import Map from '../Map/Map.js';
 
 class App extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = { isOpen: true };
+		this.state = {
+			isOpen: true,
+			filteredVenues: ''
+		};
 	}
 
 	toggleSideBarDrawer = () => {
@@ -30,7 +34,7 @@ class App extends Component {
 				console.log(values);
 
 				let google = values[0];
-				let venues = values[1].response.venues;
+				this.venues = values[1].response.venues;
 
 				this.google = google;
 				this.markers = [];
@@ -38,11 +42,11 @@ class App extends Component {
 				this.map = new google.maps.Map(document.getElementById('map'), {
 					zoom: 15,
 					scrollwheel: true,
-					center: {lat: venues[0].location.lat, lng: venues[0].location.lng}
+					center: {lat: this.venues[0].location.lat, lng: this.venues[0].location.lng}
 				});
 
 				//
-				venues.forEach(venue => {
+				this.venues.forEach(venue => {
 					let marker = new google.maps.Marker ({
 						position: {lat: venue.location.lat, lng: venue.location.lng},
 						map: this.map,
@@ -62,7 +66,6 @@ class App extends Component {
 					// Add infowindow
 				google.maps.event.addListener(marker, 'click', () => {
 					this.infowindow.setContent(marker.name);
-					// this.map.setZoom(15);
 					this.map.setCenter(marker.position);
 					this.infowindow.open(this.map, marker);
 					this.map.panBy(0, -125);
@@ -71,19 +74,36 @@ class App extends Component {
 					this.markers.push(marker);
 				});
 
-				this.setState({ venues });
+				this.setState({ filteredVenues: this.venues });
 			})
 	}
 
+	listItemClick = (venueId) => {
+		let marker = this.markers.filter(m => m.id === venueId)[0];
+		console.log(this.markers);
+
+		this.infowindow.setContent(marker.name);
+		this.map.setCenter(marker.position);
+		this.infowindow.open(this.map, marker);
+		this.map.panBy(0, -125);
+
+		if (marker.getAnimation() !== null) { marker.setAnimation(null); }
+		else { marker.setAnimation(this.google.maps.Animation.BOUNCE); }
+		setTimeout(() => { marker.setAnimation(null) }, 1500);
+	};
+
 
 	filterVenues = (query) => {
+		// Filtered version of venues
+		let filteredList = this.venues.filter( venue => venue.name.toLowerCase().includes(query.toLowerCase()) );
+
 		this.markers.forEach(marker => {
 			marker.name.toLowerCase().includes(query.toLowerCase()) === true ?
 				marker.setVisible(true) :
 				marker.setVisible(false);
 		});
 
-		this.setState({ query });
+		this.setState({ filteredVenues: filteredList, query });
 	};
 
 
@@ -102,7 +122,8 @@ class App extends Component {
 			  <SideBarDrawer show={this.state.isOpen}
 							 onClose={this.toggleSideBarDrawer}
 							 passQuery = {this.filterVenues}
-							 passVenues = {this.state.venues}
+							 passVenues = {this.state.filteredVenues}
+				  			 listItemClick={this.listItemClick}
 
 			  />
 			  	<section className="map-container">

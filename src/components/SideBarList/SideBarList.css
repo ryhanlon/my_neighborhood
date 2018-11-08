@@ -1,7 +1,11 @@
 .content-list {
-
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    list-style: none;
 }
 
 .content-item {
-
+    border-bottom: 2px dashed rgba(60, 103, 70, 0.78);
+    padding: 1rem 0;
 }
