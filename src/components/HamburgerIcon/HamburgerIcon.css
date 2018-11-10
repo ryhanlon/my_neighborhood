@@ -9,6 +9,7 @@
     box-shadow: 2px 1px 11px rgba(3, 2, 0, 0.64);
     margin: 6px 0;
     transition: 0.4s;
+    list-style: none;
 }
 
 /*---- animate bars to X ----*/

@@ -22,15 +22,16 @@ class SideBarList extends Component {
 	render() {
 		return (
 
-			<ul className="content-list">
+			<ul className="content-list" aria-label="List of venues">
 
-			{
-				// Add venues to the sidebar
-				this.props.passVenues && this.props.passVenues.length > 0 && this.props.passVenues.map((venue) => (
-						<li className="content-item" id={venue.id} key={venue.id}
-							onClick={this.handleClick}>{venue.name}</li>
-				))
-			}
+				{
+					// Add venues to the sidebar
+					this.props.passVenues && this.props.passVenues.length > 0 && this.props.passVenues.map((venue) => (
+						<li className="content-item" id={venue.id} key={venue.id} role="button" tabIndex="0"
+							onClick={this.handleClick}>{venue.name} <br/> ({venue.categories[0].shortName})
+						</li>
+					))
+				}
 
 			</ul>
 		);
@@ -39,7 +40,7 @@ class SideBarList extends Component {
 
 
 SideBarList.propTypes = {
-	passVenues: PropTypes.array
+	passVenues: PropTypes.array.isRequired
 };
 
 

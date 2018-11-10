@@ -3,9 +3,34 @@
     justify-content: start;
     flex-direction: column;
     list-style: none;
+    padding: 0;
 }
 
 .content-item {
     border-bottom: 2px dashed rgba(60, 103, 70, 0.78);
     padding: 1rem 0;
+}
+
+/*.venue-name {*/
+    /*font-weight: bold;*/
+    /*padding: .5rem;*/
+/*}*/
+
+/*.venue-category {*/
+    /*font-size: 1rem;*/
+    /*padding: .75rem;*/
+    /*font-style: italic;*/
+/*}*/
+
+.content-item:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.content-item:active {
+    color: #964ae0;
+}
+
+.content-item:visited {
+    color: rebeccapurple;
 }

@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
+// import PropTypes from 'prop-types';
 import './App.css';
 import HamburgerIcon from '../HamburgerIcon/HamburgerIcon.js';
 import SideBarDrawer from '../SideBarDrawer/SideBarDrawer.js';
-import { load_google_maps, load_places, getLocation } from '../Utils/Utils.js';
-import SideBarList from "../SideBarList/SideBarList";
-import {getMyLocation} from "../Utils/Utils";
-// import Map from '../Map/Map.js';
+import { load_google_maps, load_places } from '../Utils/Utils.js';
+
 
 class App extends Component {
 	constructor(props) {
@@ -44,7 +43,6 @@ class App extends Component {
 		});
 	};
 
-
 	loadMap = () => {
 
 		let googleMapsPromise = load_google_maps();
@@ -77,6 +75,8 @@ class App extends Component {
 						venue: venue,
 						id: venue.id,
 						name: venue.name,
+						category: 'undefined' ? '' : venue.categories[0].shortName,
+						address: 'undefined' ? 'Address not available.' : venue.location.address,
 						animation: google.maps.Animation.DROP
 					});
 
@@ -89,7 +89,8 @@ class App extends Component {
 
 					// Add infowindow
 				google.maps.event.addListener(marker, 'click', () => {
-					this.infowindow.setContent(marker.name);
+					this.infowindow.setContent(`<span>${marker.name}</span><br><span>${marker.category}</span><br></span><span>${marker.address}</span>`);
+
 					this.map.setCenter(marker.position);
 					this.infowindow.open(this.map, marker);
 					this.map.panBy(0, -125);
@@ -104,9 +105,9 @@ class App extends Component {
 
 	listItemClick = (venueId) => {
 		let marker = this.markers.filter(m => m.id === venueId)[0];
-		console.log(this.markers);
+		console.log('hey' + this.venueId);
 
-		this.infowindow.setContent(marker.name);
+		this.infowindow.setContent(`<span>${marker.name}</span><br><span>${marker.category}</span><br></span><span>${marker.address}</span>`);
 		this.map.setCenter(marker.position);
 		this.infowindow.open(this.map, marker);
 		this.map.panBy(0, -125);
@@ -135,7 +136,7 @@ class App extends Component {
     return (
       <div className="App">
 		  <header className="site-header" role="menu" aria-label="site-navigation">
-			  <h1 className="site-name">My Neighborhood</h1>
+			  <h1 className="site-name" tabIndex="0">My Neighborhood</h1>
 			  <HamburgerIcon onClick={this.toggleSideBarDrawer}
 			  				changeHamburger={this.state.isOpen}
 			  />
@@ -150,7 +151,7 @@ class App extends Component {
 				  			 listItemClick={this.listItemClick}
 
 			  />
-			  	<section className="map-container">
+			  	<section className="map-container" role="region" aria-labelledby="map">
 			  		<div id="map"></div>
 				</section>
 
@@ -160,6 +161,11 @@ class App extends Component {
     );
   }
 }
+
+
+// App.propTypes = {
+//
+// };
 
 
 export default App;

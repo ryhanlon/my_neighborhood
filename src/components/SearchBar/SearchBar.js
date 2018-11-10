@@ -14,7 +14,7 @@ class SearchBar extends Component {
 
 	handleQuery = (event) => {
 		this.setState({
-		   query: event.target.value
+		   query: event.target.value.trim()
 		}, () => this.props.passQuery(this.state.query));
 	   };
 
@@ -27,7 +27,7 @@ class SearchBar extends Component {
 			<form>
 				<label>
 					<input type="text"
-							id="search field"
+							id="search-field"
 							role="searchbox"
 							placeholder="Filter content"
 							value={query}

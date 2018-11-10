@@ -52,7 +52,7 @@ export function load_places(latitude, longitude) {
 		console.log(latitude, longitude);
 
 	let query = 'Eating';
-	let apiURL = `https://api.foursquare.com/v2/venues/search?ll=${lat},${lng}&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&limit=20&${query}&${city}&v=20181102`;
+	let apiURL = `https://api.foursquare.com/v2/venues/search?ll=${lat},${lng}&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&limit=15&${query}&${city}&v=20181102`;
 	return fetch(apiURL).then(resp => resp.json())
 }
 

@@ -1,40 +1,12 @@
 .App {
     /*background: url("../img/background-800px.jpg") fixed;*/
     background-size: cover;
-    background-color: #663399;
-    color: #CFC9BD;
-    height: 100vh;
+    background-color: rgba(49, 140, 181, 0.88);
+    color: black;
+    /*height: 100vh;*/
+    width: 100vw;
 }
 
-
-
-/*a {*/
-    /*grid-area: button;*/
-    /*text-decoration: none;*/
-    /*justify-self: center;*/
-    /*cursor: pointer;*/
-/*}*/
-
-/*form {*/
-    /*grid-area: button;*/
-    /*text-decoration: none;*/
-    /*justify-self: center;*/
-    /*cursor: pointer;*/
-/*}*/
-
-/*.main-container {*/
-    /*display: grid;*/
-    /*position: relative;*/
-    /*grid-template: 10% repeat(6, 13%) 10% / 1fr;*/
-    /*grid-template-areas: "header"*/
-                         /*"project-1"*/
-                         /*"project-2"*/
-                         /*"blog-move"*/
-                         /*"project-5"*/
-                         /*"project-3"*/
-                         /*"project-4"*/
-                         /*"footer";*/
-/*}*/
 
 
 /*--------------------------
@@ -48,14 +20,20 @@
     background-color: rgba(54, 49, 39, .95);
     padding: 10px;
     box-shadow: 1px 1px 3px rgba(3, 2, 0, 0.64);
+    color: #CFC9BD;
+    /*width: 100vw;*/
 }
 
+.map-container {
+    background-color: rgb(49, 140, 181);
 
+}
 
 #map {
     align-self: center;
-    width: 100vw;
+    /*width: 100vw;*/
     height: 100vh;
     position: fixed;
-
+    background-color: #964ae0;
 }
+

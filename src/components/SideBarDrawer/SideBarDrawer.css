@@ -1,10 +1,24 @@
+#drawer {
+    overflow: scroll;
+}
+
+
 .modal-style {
     position: absolute;
     z-index: 100;
     background-color: rgba(49, 140, 181, 0.89);
     border-radius: 5;
-    width: 25vw;
-    /*height: 100vh;*/
-    padding: 1rem;
+    width: 70vw;
+    height: 93%;
+    padding: 1.5rem;
     color: black;
+}
+
+
+/*===== Range of iPad =====*/
+
+@media screen and (min-width: 767px) {
+    .modal-style {
+        width: 20vw;
+    }
 }
