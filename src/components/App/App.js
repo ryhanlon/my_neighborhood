@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import HamburgerIcon from '../HamburgerIcon/HamburgerIcon.js';
 import SideBarDrawer from '../SideBarDrawer/SideBarDrawer.js';
-import { load_google_maps, load_places } from '../Utils/Utils.js';
+import { load_google_maps, load_places, getLocation } from '../Utils/Utils.js';
 import SideBarList from "../SideBarList/SideBarList";
+import {getMyLocation} from "../Utils/Utils";
 // import Map from '../Map/Map.js';
 
 class App extends Component {
@@ -11,10 +12,31 @@ class App extends Component {
 		super(props);
 
 		this.state = {
+			latitude: '',
+			longitude: '',
 			isOpen: true,
 			filteredVenues: ''
 		};
 	}
+
+	componentDidMount() {
+		const location = window.navigator && window.navigator.geolocation;
+
+		if (location) {
+			location.getCurrentPosition((position) => {
+				this.setState({
+					latitude: position.coords.latitude,
+					longitude: position.coords.longitude
+				}, () => this.loadMap())
+			}, (error) => {
+				this.setState({
+					latitude: 'err-latitude',
+					longitude: 'err-longitude'
+				})
+			})
+		}
+
+	};
 
 	toggleSideBarDrawer = () => {
 		this.setState({
@@ -22,9 +44,11 @@ class App extends Component {
 		});
 	};
 
-	componentDidMount() {
+
+	loadMap = () => {
+
 		let googleMapsPromise = load_google_maps();
-		let placesPromise = load_places();
+		let placesPromise = load_places(this.state.latitude, this.state.longitude);
 
 		Promise.all([
 			googleMapsPromise,
@@ -76,7 +100,7 @@ class App extends Component {
 
 				this.setState({ filteredVenues: this.venues });
 			})
-	}
+	};
 
 	listItemClick = (venueId) => {
 		let marker = this.markers.filter(m => m.id === venueId)[0];

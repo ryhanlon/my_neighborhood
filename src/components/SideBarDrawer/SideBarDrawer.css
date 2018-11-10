@@ -1,9 +1,10 @@
 .modal-style {
     position: absolute;
     z-index: 100;
-    background-color: #fff;
+    background-color: rgba(49, 140, 181, 0.89);
     border-radius: 5;
     width: 25vw;
-    height: 100vh;
+    /*height: 100vh;*/
     padding: 1rem;
+    color: black;
 }

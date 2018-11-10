@@ -4,7 +4,6 @@
     background-color: #663399;
     color: #CFC9BD;
     height: 100vh;
-
 }
 
 
@@ -54,7 +53,9 @@
 
 
 #map {
-    width: 100%;
+    align-self: center;
+    width: 100vw;
     height: 100vh;
     position: fixed;
+
 }
