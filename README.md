@@ -7,7 +7,7 @@
 
 by Rebecca Hanlon
 
-*My Neighborhood* is a
+*My Neighborhood*  uses the users current position to find business and government offices near the user.  If a user is looking for a specific location he or she can enter the name into the filter input to sort or search for a specific venue that has been sent.  A user can click each marker for more details or click each venue in the sidebar draw list for more details.
 
 Click [here](#picture-of-data-and-components-breakdown) to see the component and data break down of the app.
 
@@ -41,8 +41,15 @@ This project was built using *Create React App*.  For complete technical details
 - JavaScript (ECMASript 6)
 - React 16.5.2
     - PropTypes
-
-
+- Google Maps JavaScript API
+    - [Overview](https://developers.google.com/maps/documentation/javascript/tutorial) :
+      Gave an overview of how to get a map to show up.  ToC of additional topics and concepts to use to customize map.
+    - [Geocoding Service](https://developers.google.com/maps/documentation/javascript/geocoding) :
+      Gave an overview to enable the Geocoding API, sample of the result.
+    -  [Markers](https://developers.google.com/maps/documentation/javascript/markers) : Overview of how to add and remove a marker, animate a marker, customize a marker, etc.
+- FourSquare API
+    - [Places API](https://developer.foursquare.com/docs/announcements)
+    - [Get Details of a Venue](https://developer.foursquare.com/docs/api/venues/details)
 
 
 ##### Articles and Tutorials
@@ -51,18 +58,34 @@ This project was built using *Create React App*.  For complete technical details
 Used the following tutorials, articles and docs while building this app.
 
 - *Coding Session - Google Maps with React JS* by Ryan Waite, [video](https://www.youtube.com/watch?v=5J6fs_BlVC0&feature=youtu.be)
-I used this tutorial to set up Google Maps in React, filter input.
+I used this tutorial to set up Google Maps in React and filter input.  Also see StackOverFlow answer below
+
+- *Using Google Maps in React Component* at [StackOverFlow answer by tremby](https://stackoverflow.com/questions/48493960/using-google-map-in-react-component)
+
+- *ReactJS - get latitude on click and show it in input* [StackOverFlow answer by mersocarlin](https://stackoverflow.com/questions/46387375/reactjs-get-latitude-on-click-and-show-it-in-input)
+My component is different but this article reminded me about 'state'.
 
 - The following lessons from the FEND-NanoDegree course:
-    - Lesson 3: State Management,
-    - Lesson 4: Render UI with External Date
-    - Lesson 5: Managing App Location with React Router
+    - Lesson 5: Getting Started with the APIs
+    - Lesson 6: Understanding API Services
+
 - React Docs
     - [The Select Tab](https://reactjs.org/docs/forms.html#the-select-tag)
     - [Handling Events](https://reactjs.org/docs/handling-events.html)
     - [DOM Elements](https://reactjs.org/docs/dom-elements.html)
+    - [Typechecking With PropTypes](https://reactjs.org/docs/typechecking-with-proptypes.html)
+    - [Accessibility](https://reactjs.org/docs/accessibility.html)
 
 - How to deal with the state being one step behind, [StackOverFlow](https://stackoverflow.com/questions/42434013/react-state-update-step-behind) answered by paquash
+
+- *Tutorial Requests: FEND Project 7 - Walk Through & Complete Guide(Long)* by Ryan Waite, [video](https://www.youtube.com/watch?v=LvQe7xrUh7I&list=PLKC17wty6rS1XVZbRlWjYU0WVsIoJyO3s&index=9)
+
+- FourSquare Docs
+    - [Docs Overview](https://developer.foursquare.com/docs)
+    - [Search for Venues](https://developer.foursquare.com/docs/api/venues/search)
+
+- w3schools
+    - [HTML5 Geolocation](https://www.w3schools.com/html/html5_geolocation.asp)
 
 ##### Folder Structure Breakdown
 ```
@@ -77,38 +100,32 @@ I used this tutorial to set up Google Maps in React, filter input.
         index.html
         favicon.ico
         manifest.json
+        sw.js
       src/
         components/
            App/
              App.css
              App.js
-           Books/
-             Books.js
-             Books.css
-           LibraryPage/
-             LibraryPage.js
-             LibraryPage.css
-           ReturnIcon/
-             ReturnIcon.js
-             ReturnIcon.css
-           SearchIcon/
-             SearchIcon.js
-             SearchIcon.css
-           SearchPage/
-             SearchPage.js
-             SearchPage.css
-           Shelf/
-             Shelf.js
-             Shelf.css
-           ShelfControl/
-             ShelfControl.js
-             ShelfControl.css
+           HamburgerIcon/
+             HamburgerIcon.js
+             HamburgerIcon.css
+           SearchBar/
+             SearchBar.js
+             SearchBar.css
+           SideBarDrawer/
+             SideBarDrawer.js
+             SideBarDrawer.css
+           SideBarList/
+             SideBarList.js
+             SideBarList.css
+           Utils/
+             Utils.js
+             Utils.css
+           startServiceWorker.js
         App.test.js
         index.css
         index.js
         logo.svg
-        icons/
-        BooksAPI.js
       README.md
       gitignore
       yarn.lock

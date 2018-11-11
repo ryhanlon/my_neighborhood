@@ -1,12 +1,10 @@
 .App {
-    /*background: url("../img/background-800px.jpg") fixed;*/
     background-size: cover;
     background-color: rgba(49, 140, 181, 0.88);
     color: black;
     /*height: 100vh;*/
     width: 100vw;
 }
-
 
 
 /*--------------------------
@@ -37,3 +35,18 @@
     background-color: #964ae0;
 }
 
+.venue-name {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.address {
+    font-size: .75rem;
+    letter-spacing: 1px;
+}
+
+.pop-up {
+    width: 165px;
+    line-height: 1.5;
+
+}

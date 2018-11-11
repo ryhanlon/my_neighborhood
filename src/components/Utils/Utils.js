@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 import './Utils.css';
 
@@ -35,13 +35,16 @@ export function load_google_maps() {
 		script.src = `https://maps.googleapis.com/maps/api/js?libraries=places&key=${API_KEY}&callback=resolveGoogleMapsPromise`;
 		script.async = true;
 		document.body.appendChild(script);
+
+
 	});
 
-	getMyLocation();
+			getMyLocation();
+
 }
 
 
-// FourSquare API
+// FourSquare API, get venues
 export function load_places(latitude, longitude) {
 	console.log(latitude, longitude);
 	const CLIENT_ID = 'JGXC3I3UMA1HFC401TQXSAKAIF0SY0VVUVQYJDUNHI4RLXPW';
@@ -50,10 +53,10 @@ export function load_places(latitude, longitude) {
 	let lat = latitude;
 	let lng = longitude;
 	let city = 'Portland, OR';
-		console.log(latitude, longitude);
+		// console.log(latitude, longitude);
 
 	let query = 'Eating';
-	let apiURL = `https://api.foursquare.com/v2/venues/search?ll=${lat},${lng}&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&limit=15&${query}&${city}&v=20181102`;
+	let apiURL = `https://api.foursquare.com/v2/venues/search?ll=${lat},${lng}&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&limit=20&${query}&${city}&v=20181102`;
 	return fetch(apiURL).then(resp => resp.json())
 }
 

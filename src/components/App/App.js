@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
 import './App.css';
 import HamburgerIcon from '../HamburgerIcon/HamburgerIcon.js';
 import SideBarDrawer from '../SideBarDrawer/SideBarDrawer.js';
@@ -28,10 +27,7 @@ class App extends Component {
 					longitude: position.coords.longitude
 				}, () => this.loadMap())
 			}, (error) => {
-				this.setState({
-					latitude: 'err-latitude',
-					longitude: 'err-longitude'
-				})
+				alert("Unable to find your current location.")
 			})
 		}
 
@@ -76,7 +72,7 @@ class App extends Component {
 						id: venue.id,
 						name: venue.name,
 						category: 'undefined' ? '' : venue.categories[0].shortName,
-						address: 'undefined' ? 'Address not available.' : venue.location.address,
+						address: venue.location.formattedAddress ? venue.location.formattedAddress : 'Address not available.',
 						animation: google.maps.Animation.DROP
 					});
 
@@ -89,7 +85,7 @@ class App extends Component {
 
 					// Add infowindow
 				google.maps.event.addListener(marker, 'click', () => {
-					this.infowindow.setContent(`<span>${marker.name}</span><br><span>${marker.category}</span><br></span><span>${marker.address}</span>`);
+					this.infowindow.setContent(`<div class="pop-up"><span class="venue-name">${marker.name}</span><br/><span>${marker.category}</span><br/><span class="address">${marker.address}</span></div>`);
 
 					this.map.setCenter(marker.position);
 					this.infowindow.open(this.map, marker);
@@ -105,9 +101,8 @@ class App extends Component {
 
 	listItemClick = (venueId) => {
 		let marker = this.markers.filter(m => m.id === venueId)[0];
-		console.log('hey' + this.venueId);
 
-		this.infowindow.setContent(`<span>${marker.name}</span><br><span>${marker.category}</span><br></span><span>${marker.address}</span>`);
+		this.infowindow.setContent(`<div class="pop-up"><span class="venue-name">${marker.name}</span><br/><span>${marker.category}</span><br/><span class="address">${marker.address}</span></div>`);
 		this.map.setCenter(marker.position);
 		this.infowindow.open(this.map, marker);
 		this.map.panBy(0, -125);
@@ -161,11 +156,6 @@ class App extends Component {
     );
   }
 }
-
-
-// App.propTypes = {
-//
-// };
 
 
 export default App;
