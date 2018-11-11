@@ -4,20 +4,20 @@ import './Utils.css';
 
 
 
-	export function getMyLocation() {
-		const location = window.navigator && window.navigator.geolocation;
+function getMyLocation() {
+	const location = window.navigator && window.navigator.geolocation;
 
-		if (location) {
-			location.getCurrentPosition((position) => {
+	if (location) {
+		location.getCurrentPosition((position) => {
 
-				let latitude = position.coords.latitude;
-				let longitude = position.coords.longitude;
+			let latitude = position.coords.latitude;
+			let longitude = position.coords.longitude;
 
-				load_places(latitude, longitude);
+			load_places(latitude, longitude);
 
-			});
-		}
-	};
+		});
+	}
+};
 
 
 export function load_google_maps() {
@@ -36,6 +36,7 @@ export function load_google_maps() {
 		script.async = true;
 		document.body.appendChild(script);
 	});
+
 	getMyLocation();
 }
 
