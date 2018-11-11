@@ -9,7 +9,7 @@ by Rebecca Hanlon
 
 *My Neighborhood*  uses the users current position to find business and government offices near the user.  If a user is looking for a specific location he or she can enter the name into the filter input to sort or search for a specific venue that has been sent.  A user can click each marker for more details or click each venue in the sidebar draw list for more details.
 
-Click [here](#picture-of-data-and-components-breakdown) to see the component and data break down of the app.
+<!--Click [here](#picture-of-data-and-components-breakdown) to see the component and data break down of the app.-->
 
 Click [here](#pictures-of-responsive-design) to see pictures of the website's Responsive Design.
 
@@ -133,8 +133,8 @@ My component is different but this article reminded me about 'state'.
       package-lock.json
 ```
 
-#### Picture of Data and Components Breakdown
-![breakdown](./docs/imgs/myReadAppOutline_v2.jpg)
+<!--#### Picture of Data and Components Breakdown-->
+<!--![breakdown](./docs/imgs/myReadAppOutline_v2.jpg)-->
 
 #### Pictures of Responsive Design
 ##### Phone
@@ -149,6 +149,6 @@ My component is different but this article reminded me about 'state'.
 ![tablet search page](./docs/imgs/tablet-2.png)
 
 ##### Desk Top
-![desktop home page](./docs/imgs/desktop-1.png)
+![desktop home page](./docs/imgs/deskTop-1.png)
 
-![desktop search page](./docs/imgs/desktop-2.png)
+![desktop search page](./docs/imgs/deskTop-2.png)

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-type';
+import PropTypes from 'prop-types';
 import './SearchBar.css';
 
 
@@ -25,7 +25,7 @@ class SearchBar extends Component {
 		return (
 			<div>
 			<form>
-				<label>
+				<label htmlFor="search-field">
 					<input type="text"
 							id="search-field"
 							role="searchbox"
@@ -42,9 +42,9 @@ class SearchBar extends Component {
 }
 
 
-// SearchBar.propTypes = {
-//
-// };
+SearchBar.propTypes = {
+	onChange: PropTypes.func.isRequired
+};
 
 
 export default SearchBar;

@@ -10,7 +10,6 @@
 /*===== Range of iPad =====*/
 
 @media screen and (min-width: 767px) {
-
     #search-field {
         width: 19vw;
     }

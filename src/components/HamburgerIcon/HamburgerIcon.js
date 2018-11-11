@@ -4,9 +4,6 @@ import './HamburgerIcon.css';
 
 
 class HamburgerIcon extends Component {
-	constructor(props) {
-		super(props);
-	}
 
 	render() {
 		return (

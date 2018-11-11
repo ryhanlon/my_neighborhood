@@ -3,7 +3,7 @@
 import './Utils.css';
 
 
-
+// Get user's location and call load_places() with lat and lng
 function getMyLocation() {
 	const location = window.navigator && window.navigator.geolocation;
 
@@ -17,9 +17,9 @@ function getMyLocation() {
 
 		});
 	}
-};
+}
 
-
+// Load google maps and call getMyLocation() to get the users position
 export function load_google_maps() {
 	return new Promise(function (resolve, reject) {
 		// define the global callback that will run when google maps is loaded
@@ -36,11 +36,8 @@ export function load_google_maps() {
 		script.async = true;
 		document.body.appendChild(script);
 
-
+		getMyLocation();
 	});
-
-			getMyLocation();
-
 }
 
 
@@ -53,13 +50,9 @@ export function load_places(latitude, longitude) {
 	let lat = latitude;
 	let lng = longitude;
 	let city = 'Portland, OR';
-		// console.log(latitude, longitude);
+	// console.log(latitude, longitude);
 
 	let query = 'Eating';
 	let apiURL = `https://api.foursquare.com/v2/venues/search?ll=${lat},${lng}&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&limit=20&${query}&${city}&v=20181102`;
 	return fetch(apiURL).then(resp => resp.json())
 }
-
-
-
-
