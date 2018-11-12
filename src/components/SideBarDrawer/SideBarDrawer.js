@@ -33,7 +33,8 @@ class SideBarDrawer extends Component {
 
 SideBarDrawer.propTypes = {
 	show: PropTypes.bool,
-	children: PropTypes.node
+	children: PropTypes.node,
+	passVenues: PropTypes.array.isRequired
 };
 
 

@@ -13,7 +13,7 @@ class App extends Component {
 			latitude: '',
 			longitude: '',
 			isOpen: true,
-			filteredVenues: ''
+			filteredVenues: []
 		};
 	}
 
@@ -41,13 +41,16 @@ class App extends Component {
 
 	loadMap = () => {
 
+		// Call functions and assign to variable
 		let googleMapsPromise = load_google_maps();
 		let placesPromise = load_places(this.state.latitude, this.state.longitude);
 
+		// Resolve promises
 		Promise.all([
 			googleMapsPromise,
 			placesPromise
 		])
+			// Sort through data and build infowindows
 			.then(values => {
 				console.log(values);
 
@@ -63,7 +66,13 @@ class App extends Component {
 					center: {lat: this.venues[0].location.lat, lng: this.venues[0].location.lng}
 				});
 
-				//
+				// google maps function for error
+				function gm_authFailure() {
+					alert("Unable to load map.");
+					console.log("Unable to load map.");
+				}
+
+				// Info object for markers
 				this.venues.forEach(venue => {
 					let marker = new google.maps.Marker ({
 						position: {lat: venue.location.lat, lng: venue.location.lng},
@@ -83,7 +92,7 @@ class App extends Component {
 					setTimeout(() => { marker.setAnimation(null) }, 1500);
 				});
 
-					// Add infowindow
+					// Show infowindow when marker is clicked
 				google.maps.event.addListener(marker, 'click', () => {
 					this.infowindow.setContent(`<div class="pop-up"><span class="venue-name">${marker.name}</span><br/><span>${marker.category}</span><br/><span class="address">${marker.address}</span></div>`);
 
@@ -97,16 +106,25 @@ class App extends Component {
 
 				this.setState({ filteredVenues: this.venues });
 			})
+			// Show error message if map is unable to load.
+			.catch(error =>  {
+				console.log("error", error);
+				alert("Oh no! The map is unable to load :(");
+			}
+		);
 	};
 
 	listItemClick = (venueId) => {
+		// When clicked, Listitems show pop-up information
 		let marker = this.markers.filter(m => m.id === venueId)[0];
 
+		// Info for pop-windows
 		this.infowindow.setContent(`<div class="pop-up"><span class="venue-name">${marker.name}</span><br/><span>${marker.category}</span><br/><span class="address">${marker.address}</span></div>`);
 		this.map.setCenter(marker.position);
 		this.infowindow.open(this.map, marker);
 		this.map.panBy(0, -125);
 
+		// Animate pop-windows
 		if (marker.getAnimation() !== null) { marker.setAnimation(null); }
 		else { marker.setAnimation(this.google.maps.Animation.BOUNCE); }
 		setTimeout(() => { marker.setAnimation(null) }, 1500);

@@ -87,6 +87,9 @@ My component is different but this article reminded me about 'state'.
 - w3schools
     - [HTML5 Geolocation](https://www.w3schools.com/html/html5_geolocation.asp)
 
+- MDN Web Docs
+    - [Promise.all()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)
+
 ##### Folder Structure Breakdown
 ```
     my-reads_app/
