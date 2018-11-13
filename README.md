@@ -60,6 +60,9 @@ Used the following tutorials, articles and docs while building this app.
 - *Coding Session - Google Maps with React JS* by Ryan Waite, [video](https://www.youtube.com/watch?v=5J6fs_BlVC0&feature=youtu.be)
 I used this tutorial to set up Google Maps in React and filter input.  Also see StackOverFlow answer below
 
+- *Modal Dialogs in React* by Dave Ceddia [article](https://daveceddia.com/open-modal-in-react/)
+Used this tutorial for the modal window--SideBarDrawer
+
 - *Using Google Maps in React Component* at [StackOverFlow answer by tremby](https://stackoverflow.com/questions/48493960/using-google-map-in-react-component)
 
 - *ReactJS - get latitude on click and show it in input* [StackOverFlow answer by mersocarlin](https://stackoverflow.com/questions/46387375/reactjs-get-latitude-on-click-and-show-it-in-input)
