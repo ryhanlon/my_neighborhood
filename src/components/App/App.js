@@ -67,10 +67,10 @@ class App extends Component {
 					center: {lat: this.venues[0].location.lat, lng: this.venues[0].location.lng}
 				});
 
-				// google maps function for error
-				function gm_authFailure() {
-					alert("Unable to load map.  Try again later.");
-				}
+				// Google maps function for authentication error. Used .catch() instead
+				// function gm_authFailure() {
+				// 	alert("Unable to load map.  Try again later.");
+				// }
 
 				// Info object for markers
 				this.venues.forEach(venue => {

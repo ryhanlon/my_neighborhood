@@ -35,9 +35,10 @@ export function load_google_maps() {
 		script.src = `https://maps.googleapis.com/maps/api/js?libraries=places&key=${API_KEY}&callback=resolveGoogleMapsPromise`;
 		script.async = true;
 		document.body.appendChild(script);
-	});
 
-	getMyLocation();
+		getMyLocation();
+
+	});
 }
 
 
