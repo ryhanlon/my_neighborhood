@@ -27,7 +27,8 @@ class App extends Component {
 					longitude: position.coords.longitude
 				}, () => this.loadMap())
 			}, (error) => {
-				alert("Unable to find your current location.")
+				alert("Unable to find your current location. Try again later.");
+				console.log(error);
 			})
 		}
 
@@ -68,8 +69,7 @@ class App extends Component {
 
 				// google maps function for error
 				function gm_authFailure() {
-					alert("Unable to load map.");
-					console.log("Unable to load map.");
+					alert("Unable to load map.  Try again later.");
 				}
 
 				// Info object for markers
@@ -109,7 +109,7 @@ class App extends Component {
 			// Show error message if map is unable to load.
 			.catch(error =>  {
 				console.log("error", error);
-				alert("Oh no! The map is unable to load :(");
+				alert("Oh no!  :( Try again later.");
 			}
 		);
 	};

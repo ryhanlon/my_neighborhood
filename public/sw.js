@@ -1,4 +1,4 @@
-const cacheNames = 'rmyNeighborhood-static-v3';
+const cacheNames = 'rmyNeighborhood-static-v1';
 
 
 
