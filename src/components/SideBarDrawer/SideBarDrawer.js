@@ -1,34 +1,32 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './SideBarDrawer.css';
 import SearchBar from '../SearchBar/SearchBar.js';
 import SideBarList from '../SideBarList/SideBarList.js';
 
 
-class SideBarDrawer extends Component {
+const SideBarDrawer = (props) => {
+	const {show, children, passQuery, passVenues, listItemClick} = props;
 
-	render() {
+	// Render nothing if the 'show' prop is false
+	if (!show) {
+		return null;
+	}
 
-		// Render nothing if the 'show' prop is false
-		if(!this.props.show) {
-			return null;
-		}
-
-    return (
+	return (
 
 		<nav id="drawer" className="modal-style">
-			{this.props.children}
+			{children}
 
-			<SearchBar 	passQuery={this.props.passQuery} />
+			<SearchBar passQuery={passQuery}/>
 
-			<SideBarList passVenues={this.props.passVenues}
-						 listItemClick={this.props.listItemClick}/>
+			<SideBarList passVenues={passVenues}
+						 listItemClick={listItemClick}/>
 
 		</nav>
 
-    );
-  }
-}
+	);
+};
 
 
 SideBarDrawer.propTypes = {

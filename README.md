@@ -65,6 +65,9 @@ Used this tutorial for the modal window--SideBarDrawer
 
 - *Using Google Maps in React Component* at [StackOverFlow answer by tremby](https://stackoverflow.com/questions/48493960/using-google-map-in-react-component)
 
+- *Listening for Authentication Errors* at Google Maps Platform [article](https://developers.google.com/maps/documentation/javascript/events#auth-errors)
+  Recommended by the reviewer with a better explanation then the article.
+
 - *ReactJS - get latitude on click and show it in input* [StackOverFlow answer by mersocarlin](https://stackoverflow.com/questions/46387375/reactjs-get-latitude-on-click-and-show-it-in-input)
 My component is different but this article reminded me about 'state'.
 
@@ -92,6 +95,8 @@ My component is different but this article reminded me about 'state'.
 
 - MDN Web Docs
     - [Promise.all()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)
+    - [Script Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script)
+      The reviewer suggested that I use this so the script will be executed after the document has been parsed.
 
 ##### Folder Structure Breakdown
 ```

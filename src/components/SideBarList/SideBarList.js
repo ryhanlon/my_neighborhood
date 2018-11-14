@@ -4,13 +4,11 @@ import './SideBarList.css';
 
 
 class SideBarList extends Component {
-	constructor(props) {
-		super(props);
 
-		this.state = {
-			id: ''
-		}
-	}
+	state = {
+		id: ''
+	};
+
 
 	handleClick = (event) => {
 		console.log(event.target.id);
@@ -20,13 +18,15 @@ class SideBarList extends Component {
 	};
 
 	render() {
+
+		const {passVenues} = this.props;
 		return (
 
 			<ul className="content-list" aria-label="List of venues">
 
 				{
 					// Add venues to the sidebar
-					this.props.passVenues && this.props.passVenues.length > 0 && this.props.passVenues.map((venue) => (
+					passVenues && passVenues.length > 0 && passVenues.map((venue) => (
 						<li className="content-item" id={venue.id} key={venue.id} role="button" tabIndex="0"
 							onClick={this.handleClick}>{venue.name} <br/> ({venue.categories[0].shortName})
 						</li>

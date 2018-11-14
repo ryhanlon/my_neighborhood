@@ -34,7 +34,20 @@ export function load_google_maps() {
 		const API_KEY = 'AIzaSyC5xJcC7JNJdiuspVyeL-XIJDQtu7VuXIM';
 		script.src = `https://maps.googleapis.com/maps/api/js?libraries=places&key=${API_KEY}&callback=resolveGoogleMapsPromise`;
 		script.async = true;
+		script.defer = true;
 		document.body.appendChild(script);
+
+		// Error handle the script
+		script.onerror = () => {
+			alert('Unable to load page at this time. Try again later, or contact support.');
+			console.log('Error with script.');
+		};
+
+		// Error with Authorization
+		window.gm_authFailure = () => {
+			alert('Unable to authorize at this time. Try again later, or contact support.');
+			console.log('Error with google authorization.')
+		};
 
 		getMyLocation();
 
