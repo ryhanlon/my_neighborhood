@@ -63,6 +63,8 @@ I used this tutorial to set up Google Maps in React and filter input.  Also see 
 - *Modal Dialogs in React* by Dave Ceddia [article](https://daveceddia.com/open-modal-in-react/)
 Used this tutorial for the modal window--SideBarDrawer
 
+- *What is this.props.children* at [StackOverFlow answer by soroush chehresa](https://stackoverflow.com/questions/49706823/what-is-this-props-children-and-when-you-should-use-it)
+
 - *Using Google Maps in React Component* at [StackOverFlow answer by tremby](https://stackoverflow.com/questions/48493960/using-google-map-in-react-component)
 
 - *Listening for Authentication Errors* at Google Maps Platform [article](https://developers.google.com/maps/documentation/javascript/events#auth-errors)
